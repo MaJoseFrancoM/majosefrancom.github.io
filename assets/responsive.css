@@ -1,0 +1,105 @@
+/* Local review v09: mobile readability and navigation. */
+:root{--paper:#f9f9f8}
+body{background:var(--paper)}
+.contact-shortcut,.nav-toggle{display:none}
+.site-header .contact-link{outline:1px solid var(--ink);outline-offset:6px;text-decoration:none}
+.site-header .contact-link:hover{background:var(--ink);color:var(--paper);box-shadow:0 0 0 6px var(--ink)}
+main img{background:#eceeea}
+main img.image-arrived{animation:image-arrival .28s ease-out}
+@keyframes image-arrival{from{opacity:.35}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){main img.image-arrived{animation:none}}
+@media(max-width:600px){
+ body .site-header .header-inner{grid-template-columns:minmax(0,1fr) auto auto;gap:16px;padding:20px 24px}
+ body .site-header .brand{font-size:clamp(26px,7vw,36px)!important}
+ .contact-shortcut{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:4px 10px;border:1px solid var(--ink);font-size:16px;text-decoration:none;white-space:nowrap}
+ .nav-toggle:not([hidden]){display:block;min-height:44px;padding:4px 0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;cursor:pointer}
+ body .site-header nav{grid-column:1/-1;width:100%;gap:0;align-items:stretch;font-size:18px;padding-top:12px;border-top:1px solid #abb8c3}
+ body .site-header nav a{display:block;padding:8px 0;min-height:44px}
+ body .site-header nav .contact-link{display:none}
+ .site-header.menu-ready nav:not(.is-open){display:none}
+ .site-header nav [aria-current]{text-decoration:underline;text-underline-offset:5px}
+ main p,.migrated main p,.uniform-paragraphs main p{font-size:18px;line-height:1.6}
+ main p,.migrated main p{font-weight:400!important}
+ main p strong{font-weight:600}
+ /* Preserve the compact horizontal comparison groups requested by Majo. */
+ .design-fixed .columns:not(.project-overview) p{font-size:var(--small)}
+ .design-fixed .columns.project-overview{flex-direction:column;gap:24px}
+ .design-fixed .project-overview>.column{width:100%;flex:auto!important;overflow-wrap:normal}
+ .design-fixed .project-overview .column h2{min-height:0;margin:0 0 12px!important;font-size:15px}
+ .design-fixed .project-overview .column+.column{border-top:1px solid #abb8c3;padding-top:20px!important}
+ .design-fixed .project-overview .group{padding-left:0!important}
+ .project article>p.project-continuation,.project article>p.align-right{font-size:16px}
+}
+@media(max-width:360px){body .site-header .header-inner{gap:10px;padding-inline:18px}.contact-shortcut{padding-inline:8px;font-size:15px}.nav-toggle:not([hidden]){font-size:15px}}
+
+
+/* v10: restrained contact outline and full-screen mobile navigation. */
+.site-header .contact-link{outline-color:rgb(12 50 130 / .55);outline-offset:3px}
+.site-header .contact-link:hover{box-shadow:0 0 0 3px var(--ink)}
+.mobile-panel{position:fixed;inset:0;margin:0;width:100%;max-width:none;height:100%;height:100dvh;max-height:none;padding:20px 24px 32px;border:0;border-radius:0;background:var(--paper);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+.mobile-panel::backdrop{background:rgb(12 50 130 / .2)}
+.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.mobile-panel .brand{font-size:clamp(26px,7vw,36px)}
+.panel-close{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.panel-close svg,.nav-toggle svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.4}
+.mobile-panel nav{display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%;padding:0;margin-top:44px;font:300 clamp(26px,7vw,34px)/1.25 Newsreader,Georgia,serif}
+.mobile-panel nav a{white-space:normal;padding:18px 0;border-bottom:1px solid rgb(12 50 130 / .12);text-decoration:none}
+.mobile-panel nav a:hover,.mobile-panel nav a[aria-current]{text-decoration:underline}
+.mobile-panel nav .contact-link{margin-top:28px;padding:12px 16px;border:1px solid var(--ink);border-radius:0;background:var(--ink);color:var(--paper);font-size:22px;text-align:center}
+html.menu-open,html.menu-open body{overflow:hidden}
+@media(max-width:600px){
+ .contact-shortcut{position:relative;border:0;padding:4px 8px}
+ .contact-shortcut::before{content:'';position:absolute;inset:8px 0;border:1px solid rgb(12 50 130 / .55);pointer-events:none}
+ .nav-toggle:not([hidden]){display:grid;place-items:center;width:44px;padding:0}
+ .site-header.menu-ready nav{display:none}
+}
+@media(max-width:360px){.mobile-panel{padding-inline:18px}}
+
+/* v11: matched mobile copy and balanced contact inset. */
+.mobile-panel{left:auto;right:0;width:66.666667%;padding:20px 18px 32px}
+.mobile-panel .panel-heading{gap:8px}
+.mobile-panel .brand{font-size:clamp(26px,7vw,36px)}
+.mobile-panel .panel-close{flex-shrink:0}
+.mobile-panel nav{font-size:clamp(17.333px,4.666667vw,22.667px);margin-top:32px}
+.mobile-panel nav a{padding:14px 0}
+.mobile-panel nav .contact-link{font-size:14.667px;padding:12px 8px;margin-top:24px}
+.site-header .contact-link{outline:none;position:relative;padding:4px;line-height:1}
+.site-header .contact-link::before{content:'';position:absolute;inset:0;border:1px solid rgb(12 50 130 / .55);pointer-events:none}
+.site-header .contact-link:hover{box-shadow:none}
+@media(max-width:600px){
+ .contact-shortcut{padding:0;min-height:44px;line-height:1}
+ .contact-shortcut span{padding:4px;border:1px solid rgb(12 50 130 / .55)}
+ .contact-shortcut::before{display:none}
+ .domino-selective main .column p,.galipan-fixed main .column p{font-size:18px;font-weight:400!important;line-height:1.6}
+ .domino-selective .everyday-scale{flex-direction:column-reverse}
+}
+
+/* v12: final paper tone and mobile editorial hierarchy. */
+.mobile-panel::backdrop{background:rgb(12 50 130 / .14)}
+.mobile-panel nav .contact-link{font-size:20px}
+@media(max-width:600px){
+ .project main h2.heading{font-size:15px;line-height:1.3}
+ .project main h2.narrative-heading{font-size:18px;line-height:1.4;font-weight:600}
+ .privacy-policy main h2{font-size:20px;line-height:1.35}
+ main p[style*="font-weight:500"]{font-weight:500!important}
+ main p[style*="font-weight:600"]{font-weight:600!important}
+}
+
+/* v13: Casa Domino v10 reading scale, scoped to the requested pages only. */
+@media(max-width:600px){
+ body.mobile-compact main p,body.mobile-compact main .column p{font-size:var(--small);line-height:1.6}
+ body.mobile-compact main p.text-medium{font-size:var(--medium)}
+ body.mobile-compact main h2,body.mobile-compact main h2.heading,body.mobile-compact main h2.narrative-heading,body.mobile-compact .project-overview .column h2{font-size:var(--small);line-height:1.125}
+ body.mobile-compact main h3{font-size:var(--small);line-height:1.3}
+ body.visualization-fixed .columns{gap:8px}
+ body.visualization-fixed main .column h2{font-size:clamp(11px,3.4vw,13.2px);overflow-wrap:normal;word-break:normal;hyphens:none}
+}
+
+/* v14: preserve whole words, common mobile scale except Home and Let's Talk. */
+body main *,body .mobile-panel *,body .site-header *{overflow-wrap:normal;word-break:normal;hyphens:none}
+@media(max-width:600px){
+ body.mobile-compact main .verse{font-size:var(--small);line-height:1.6}
+ .design-fixed main .columns:has(>.column:nth-child(5)){gap:clamp(4px,1vw,8px)}
+ .design-fixed main .columns:has(>.column:nth-child(5))>.column{min-width:min-content!important}
+ body.mobile-compact main .columns:has(>.column:nth-child(5)) p,body.mobile-compact main .columns:has(>.column:nth-child(5)) h3{font-size:clamp(11px,3.3vw,13.2px)}
+}
