@@ -1,0 +1,11 @@
+M.J.F.M portfolio — third-party notices
+
+Paimio WordPress Theme, Copyright (C) 2023 Automattic.
+Upstream: https://github.com/Automattic/themes/tree/trunk/paimio
+Paimio-derived layout and style portions are distributed under the GNU General Public License, version 2 or (at your option) any later version. See GPL-2.0.txt and Paimio-upstream-readme.txt. They are provided without warranty.
+
+Modifications, November 2026: adaptation to standalone HTML/CSS; removal of WordPress runtime; local fonts and media; revised navigation, responsive layouts, typography and captions; responsive image sources and publication metadata. The distributed HTML/CSS files are the editable source. No build process is required.
+
+Jost, Newsreader and Urbanist font files are distributed unmodified under their respective SIL Open Font License 1.1 notices, included in this directory. Font names and copyright notices remain those in the supplied OFL files.
+
+The portfolio's editorial text, photographs, project imagery and M.J.F.M identity are separate from the GPL-covered layout/style portions. This notice does not grant a GPL license to those materials or to third-party trademarks. Existing image attribution and rights notices remain applicable. LinkedIn is a third-party trademark. The upstream Paimio demonstration chair image is not included.

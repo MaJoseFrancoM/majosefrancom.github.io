@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://majosefrancom.github.io/sitemap.xml

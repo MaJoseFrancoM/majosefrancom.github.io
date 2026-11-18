@@ -1,0 +1,58 @@
+/* Paimio-derived layout/style portions: Copyright 2023 Automattic; GPL-2.0-or-later. Modified November 2026: static portfolio adaptation and responsive refinements. See ../licenses/NOTICE.txt and GPL-2.0.txt. */
+/* Static adaptation of the Paimio visual settings (Automattic, GPL-2.0-or-later).
+   Font files retain their separate SIL OFL licenses. */
+@font-face{font-family:Jost;src:url('./fonts/Jost-variable.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:Jost;src:url('./fonts/Jost-italic-variable.ttf') format('truetype');font-style:italic;font-weight:100 900;font-display:swap}
+@font-face{font-family:Newsreader;src:url('./fonts/Newsreader-variable.ttf') format('truetype');font-style:normal;font-weight:200 800;font-display:swap}
+@font-face{font-family:Newsreader;src:url('./fonts/Newsreader-italic-variable.ttf') format('truetype');font-style:italic;font-weight:200 800;font-display:swap}
+:root{--ink:#0c3282;--space-20:.44rem;--space-30:.67rem;--space-40:1rem;--space-50:1.5rem;--space-60:2.25rem;--space-70:3.38rem;--space-80:5.06rem;--small:clamp(.825rem,.64rem + .59vw,1.0625rem);--medium:clamp(1rem,.75rem + .8vw,1.25rem)}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:Newsreader,Georgia,serif;font-size:var(--medium);font-weight:300;line-height:1.6;font-optical-sizing:none;font-variation-settings:'opsz' 16}a{color:inherit;text-underline-offset:.15em;text-decoration-thickness:.0625em}a:hover{text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:5px}figure,p{margin:0}img{display:block;max-width:100%;height:auto}h1,h2{font-family:Jost,sans-serif;font-weight:400;line-height:1.125;margin:0}h1{font-size:2rem}.site-header{border-bottom:1px solid var(--ink)}.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 0}.brand{font-family:Jost,sans-serif;font-size:48px;line-height:1.1;font-weight:400;text-decoration:none;white-space:nowrap}nav{display:flex;gap:24px;align-items:center;font-size:18px}nav a{text-decoration:none;white-space:nowrap}nav a:hover{text-decoration:underline}main{max-width:620px;margin:54px auto 0}main:focus{outline:none}.site-footer{max-width:620px;margin:72px auto 24px;border-top:1px solid var(--ink);font-size:var(--small);text-align:center;padding-top:6px}.home .site-header{max-width:765px;margin:0 auto}.home .header-inner{padding:20px 24px 16px}.home .brand{font-size:48px}.home nav{gap:24px}.home main{margin-top:78px}.home h1{font-weight:600;line-height:1.125}.home h1 strong{font-weight:800}.home .site-footer{max-width:238px;margin-top:68px}.text-small{font-size:var(--small)}.text-medium{font-size:var(--medium)}.text-large{font-size:2rem}.align-center{text-align:center}.align-right{text-align:right}.align-left{text-align:left}.font-editorial{font-family:Urbanist,sans-serif}.font-heading{font-family:Jost,sans-serif}.project article>h1{margin-bottom:0}.intro{margin-block:16px}.image{margin-block:24px}.home .image{margin:0}.columns{display:flex;gap:24px;margin-block:24px}.column{min-width:0}.column .image{margin-top:0;margin-bottom:0}.column h2{font-size:var(--small);line-height:1.125}.column p{font-size:var(--small);line-height:1.6}.separator{border:0;border-top:1px solid #abb8c3}.skip{position:absolute;top:-100px;left:16px;background:white;padding:8px;z-index:10}.skip:focus{top:8px}.menu-toggle{background:white;border:1px solid var(--ink);color:var(--ink);font:inherit;padding:4px 12px;cursor:pointer}
+@media(max-width:1050px){.header-inner{margin-inline:32px}.home .header-inner{margin-inline:0}nav{gap:20px}}
+@media(max-width:800px){.header-inner,.home .header-inner{margin:0;padding:20px 24px;flex-wrap:wrap}.home .site-header{margin-inline:24px}.brand,.home .brand{font-size:40px}nav{flex-wrap:wrap;gap:12px 22px;justify-content:flex-end}main,.site-footer{margin-left:24px;margin-right:24px}.home main{margin-top:48px}.home .site-footer{margin-inline:auto}.columns{flex-direction:column}.column{flex-basis:auto!important}.column h2 br{display:none}}
+@media(max-width:600px){.menu-toggle:not([hidden]){display:block;margin-left:auto}nav{width:100%;flex-direction:column;align-items:flex-start;padding-top:12px}nav[hidden]{display:none}.brand,.home .brand{font-size:36px}.home .header-inner{padding-inline:0}main{margin-top:40px}.home h1{font-size:1.75rem}.site-footer{margin-top:54px}.columns{gap:16px}h1{font-size:1.75rem}}
+
+
+@font-face{font-family:Urbanist;src:url('./fonts/Urbanist-variable.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap}
+.project figcaption{margin:0;padding-top:2px;font-size:.7rem;font-weight:300;line-height:1.4}
+
+
+/* Título contrastado con WordPress: Urbanist Bold. */
+.project article>h1{font-family:Urbanist,sans-serif;font-weight:700}
+
+
+/* Exploración v04: navegación móvil visible, según referencia de Majo. */
+@media(max-width:600px){
+ .header-inner,.home .header-inner{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:center;gap:24px;padding:40px 24px;}
+ .home .site-header{margin-inline:0;}
+ .brand,.home .brand,.site-header:not(.home .site-header) .brand{font-size:clamp(30px,10.4vw,40px);}
+ nav,.home nav{display:flex;width:auto;flex-direction:column;align-items:flex-start;justify-content:center;gap:12px;padding:0;font-size:18px;line-height:1.6;}
+ nav a{white-space:nowrap;}
+}
+
+
+/* Shared header: same geometry as the approved Home at every breakpoint. */
+html{scrollbar-gutter:stable}
+body .site-header{max-width:765px;margin:0 auto}
+body .header-inner{margin:0;padding:20px 24px 16px}
+body .site-header .brand{font-size:48px}
+body .site-header nav{gap:24px}
+@media(max-width:800px){
+ body .site-header{margin-inline:24px}
+ body .header-inner{padding:20px 24px;flex-wrap:wrap}
+ body .site-header .brand{font-size:40px}
+}
+@media(max-width:600px){
+ body .site-header{margin-inline:0}
+ body .header-inner{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:center;gap:24px;padding:40px 24px}
+ body .site-header .brand{font-size:clamp(30px,10.4vw,40px)}
+ body .site-header nav{gap:12px}
+}
+
+/* Small location trail, separate from the main navigation. */
+nav.breadcrumbs{display:block;width:auto;margin:0 0 12px;padding:0;font-size:.75rem;font-weight:300;line-height:1.5;color:var(--ink)}
+.breadcrumbs ol{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 0;list-style:none;margin:0;padding:0}
+.breadcrumbs li{display:inline-flex;align-items:baseline;min-width:0;max-width:100%}
+.breadcrumbs a,.breadcrumbs span{white-space:normal;overflow-wrap:anywhere}
+.breadcrumbs a{text-decoration:none}.breadcrumbs a:hover{text-decoration:underline}
+.breadcrumb-separator{margin:0 7px}
+.project article>p.project-continuation{margin:var(--space-60) 0 0;text-align:right;font-size:var(--small);font-weight:300}

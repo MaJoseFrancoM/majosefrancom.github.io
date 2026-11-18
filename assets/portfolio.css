@@ -1,0 +1,42 @@
+/* Paimio-derived layout/style portions: Copyright 2023 Automattic; GPL-2.0-or-later. Modified November 2026: static portfolio adaptation and responsive refinements. See ../licenses/NOTICE.txt and GPL-2.0.txt. */
+/* Additional layouts for migrated pages. Approved Home and Casa Dominó retain site.css. */
+.migrated .column{flex:1 1 0}.migrated .column[style*="flex-basis"]{flex-grow:0;flex-shrink:1}
+.migrated article>p:not([style]),.migrated .group>p:not([style]){margin-block:16px}
+.migrated .group{margin-block:24px}.migrated .group:first-of-type{margin-top:16px}
+.migrated h2.heading{font-size:var(--small);line-height:1.125}.migrated h3{font-size:var(--small);margin:8px 0;font-weight:700;line-height:1.3}
+.font-body{font-family:Newsreader,Georgia,serif}.migrated .text-medium{font-size:var(--medium)}.migrated .verse{font:inherit;font-size:1rem;margin:0 0 8px;white-space:normal}
+.cover{position:relative;display:flex;align-items:center;padding:24px 20px;isolation:isolate;overflow:hidden}.cover>.cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.cover-overlay{position:absolute;inset:0;background:#000;opacity:.5;z-index:-1}.cover-overlay.dim-30{opacity:.3}.cover-content{width:100%;color:white}.cover-content .heading{font-size:var(--medium)!important}.text-white{color:white}.bg-gray{background:#abb8c3;padding:20px}.bg-black{background:#000}
+.media-text{display:grid;align-items:center;gap:24px;margin-block:24px}.media-image{margin:0}.media-content>p+p{margin-top:16px}.media-content{min-width:0}
+.paired-columns h2,.paired-columns h3{margin-block:8px!important}.paired-columns .column>.image{margin-bottom:0}.paired-columns .column>p{margin-block:8px}.paired-columns .column>.group{margin:0}.paired-columns .column{padding-left:0!important}
+.gallery{margin-top:16px}.gallery-row{display:flex;gap:4px;margin-bottom:4px}.gallery-col{min-width:0;flex-shrink:1}.gallery-item{margin:0;height:100%}.gallery a{display:block;height:100%}.gallery img{width:100%;height:100%;object-fit:cover}.gallery a:focus-visible{outline-offset:-3px}
+.migrated hr.bg-gray{padding:0;height:0;background:transparent}
+.paired-columns .column p{font-family:Newsreader,Georgia,serif;font-weight:300}
+.migrated ul:has(.linkedin){list-style:none;padding:0;margin:24px 0}.linkedin{color:#000;display:inline-flex;padding:4px}.linkedin svg{display:block}
+dialog.photo-viewer{padding:48px 16px 16px;border:0;background:#fff;color:var(--ink);max-width:94vw;max-height:94vh}dialog.photo-viewer::backdrop{background:rgb(0 0 0/.85)}.photo-viewer img{max-height:78vh;max-width:85vw;width:auto;object-fit:contain}.photo-viewer button{position:absolute;right:12px;top:8px;background:#fff;color:var(--ink);border:1px solid var(--ink);font:inherit;padding:4px 12px;cursor:pointer}
+@media(max-width:800px){.migrated .column{flex-basis:auto!important}.media-text{grid-template-columns:1fr!important}.paired-columns{gap:24px}.paired-columns .column{padding:0!important}.migrated .group{padding-left:0!important}.gallery-row{gap:3px}.cover{min-height:148px!important}}
+
+/* Majo: keep desktop column composition on mobile for the two Design projects. */
+@media(max-width:800px){
+ .design-fixed .columns{flex-direction:row;flex-wrap:nowrap;gap:clamp(10px,3vw,24px);align-items:flex-start}
+ .design-fixed .columns>.column{flex:1 1 0!important;min-width:0;overflow-wrap:anywhere}
+ .design-fixed .media-text{grid-template-columns:var(--original-columns)!important;gap:16px}
+ .design-fixed .paired-columns h2{min-height:2.25em}
+}
+.privacy-policy h2{font-family:Urbanist,sans-serif;font-weight:600;font-size:var(--medium);margin:32px 0 12px}
+.privacy-policy p{margin:16px 0;overflow-wrap:anywhere}
+
+/* Reference-led mobile adjustments, scoped to the three requested pages. */
+@media(max-width:800px){
+ .visualization-fixed .columns,.galipan-fixed .columns,.domino-selective .columns:not(:has(img)){flex-direction:row;flex-wrap:nowrap;align-items:flex-start;gap:clamp(12px,4vw,24px)}
+ .visualization-fixed .columns>.column{flex:1 1 0!important;min-width:0;overflow-wrap:anywhere}
+ .galipan-fixed .columns>.column,.domino-selective .columns:not(:has(img))>.column{flex-basis:0!important;flex-shrink:1;min-width:0;overflow-wrap:anywhere}
+ .galipan-fixed .columns>.column[style*="33.33%"],.domino-selective .columns:not(:has(img))>.column[style*="33.33%"]{flex-grow:1}
+ .galipan-fixed .columns>.column[style*="66.66%"],.domino-selective .columns:not(:has(img))>.column[style*="66.66%"]{flex-grow:2}
+}
+
+/* Match Visualization paragraphs on the three requested editorial pages. */
+.uniform-paragraphs main p{font-size:var(--small)}
+
+/* AI disclosure remains adjacent to the relevant image, at caption size. */
+.project figcaption{font-weight:700;font-style:italic}
+.project figcaption .ai-disclosure,.project figcaption.ai-disclosure{display:inline;font-size:.7rem;font-weight:300;font-style:italic;line-height:1.4}
