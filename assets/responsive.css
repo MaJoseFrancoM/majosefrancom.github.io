@@ -103,3 +103,17 @@ body main *,body .mobile-panel *,body .site-header *{overflow-wrap:normal;word-b
  .design-fixed main .columns:has(>.column:nth-child(5))>.column{min-width:min-content!important}
  body.mobile-compact main .columns:has(>.column:nth-child(5)) p,body.mobile-compact main .columns:has(>.column:nth-child(5)) h3{font-size:clamp(11px,3.3vw,13.2px)}
 }
+
+/* v15: visible entrance to the five-project selection. */
+.home main p.selection-entry{margin:40px 0 0;text-align:right;font-size:18px;font-weight:300!important;line-height:1.4}
+.selection-entry>a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;text-decoration:none}
+.selection-entry>a>span{display:block;padding:4px;border:1px solid rgb(12 50 130 / .55)}
+.selection-entry>a:hover>span{background:var(--ink);color:var(--paper)}
+.next-project-name{white-space:nowrap}
+@media(max-width:600px){.home main p.selection-entry{font-size:16px;margin-top:32px}}
+
+/* v16: extend the existing single link across each project cover. */
+.cover .cover-content a::after{content:'';position:absolute;inset:0;z-index:1}
+.cover:has(.cover-content a:hover) .heading{text-decoration:underline}
+.cover .cover-content a:focus-visible{outline:none}
+.cover .cover-content a:focus-visible::after{outline:2px solid white;outline-offset:-5px;box-shadow:inset 0 0 0 2px var(--ink)}
